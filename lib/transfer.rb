@@ -19,12 +19,6 @@ class Transfer
   def execute_transaction
     if @status == "complete"
       puts "Transaction was already excuted."
-       
-    elsif 
-      @sender.deposit( @amount * -1 ) 
-      @receiver.deposit( @amount )
-      @status = "complete"
-    
     else
       @sender.balance < @amount
       @status = "rejected"
