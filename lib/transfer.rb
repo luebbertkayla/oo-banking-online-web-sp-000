@@ -21,7 +21,9 @@ class Transfer
       puts "Transaction was already excuted."
        
     elsif 
-    
+      @sender.deposit( @amount * -1 ) 
+      @receiver.deposit( @amount )
+      @status = "complete"
        @sender.balance < @amount
       @status = "rejected"
       return "Transaction rejected. Please check your account balance."
